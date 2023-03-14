@@ -58,9 +58,10 @@ def get_text(m):
         markup.add(types.KeyboardButton("Babka On The Hunt: 2D Классика"))
         markup.add(types.KeyboardButton("Запомни эти карты"))
         markup.add(types.KeyboardButton("Камень ножницы бумага"))
+        markup.add(types.KeyboardButton("Крестики нолики"))
         markup.add(types.KeyboardButton("Sweetness"))
         markup.add(types.KeyboardButton("Guess"))
-        markup.add(types.KeyboardButton("Button clicker"))
+        markup.add(types.KeyboardButton("Button pusher"))
         markup.add(types.KeyboardButton("Вернуться на главную"))
         bot.send_message(m.chat.id, 'Выберите интересующую игру Creagoo', reply_markup=markup)
 
@@ -106,6 +107,36 @@ def get_text(m):
 
         markup.add(games, help, contact, links)
         bot.send_message(m.chat.id, 'Вы вернулись на главную', reply_markup=markup)
+
+    elif usertext in lists.list_games:
+        if usertext in lists.game_babkaonthehunt2dclassic:
+            bot.send_message(m.chat.id, returns.descgame_babkaonthehunt2dclassic(), parse_mode='html')
+            ## прикрепить фотографии
+            ## прикрепить ссылки на скачивание
+
+        elif usertext in lists.game_tictactoe:
+            bot.send_message(m.chat.id, returns.descgame_tictactoe(), parse_mode='html')
+
+        elif usertext in lists.game_babkaonthehuntlight:
+            bot.send_message(m.chat.id, returns.descgame_babkaonthehuntlight(), parse_mode='html')
+
+        elif usertext in lists.game_babkaonthehunt:
+            bot.send_message(m.chat.id, returns.descgame_babkaonthehunt(), parse_mode='html')
+
+        elif usertext in lists.game_guess:
+            bot.send_message(m.chat.id, returns.descgame_guess(), parse_mode='html')
+
+        elif usertext in lists.game_rememberthesecards:
+            bot.send_message(m.chat.id, returns.descgame_rememberthesecards(), parse_mode='html')
+
+        elif usertext in lists.game_sweetness:
+            bot.send_message(m.chat.id, returns.descgame_sweetness(), parse_mode='html')
+
+        elif usertext in lists.game_buttonpusher:
+            bot.send_message(m.chat.id, returns.descgame_buttonpusher(), parse_mode='html')
+
+        elif usertext in lists.game_rockpaperscissors:
+            bot.send_message(m.chat.id, returns.descgame_rockpaperscissors(), parse_mode='html')
 
     else:
         bot.send_message(m.chat.id, returns.text_else())

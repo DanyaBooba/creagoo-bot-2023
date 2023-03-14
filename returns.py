@@ -73,3 +73,32 @@ def text_hello(name):
 
 def text_else():
     return "К сожалению, я не могу ответить"
+
+
+## GAMES
+def descgame_babkaonthehunt2dclassic():
+    return "<b>Babka On The Hunt: 2D Классика</b>\n\nИграйте за русскую боевую женщину Дусю! Пройдите в БОЛЬНИЦУ. Отберите свою клубнику. Полетите в КОСМОС. Посетите местное болото. И отправьтесь домой отдыхать."
+
+def descgame_babkaonthehuntlight():
+    return "<b>Babka On The Hunt Light</b>\n\n"
+
+def descgame_babkaonthehunt():
+    return "<b>Babka On The Hunt</b>\n\n"
+
+def descgame_guess():
+    return "<b>Guess</b>\n\n"
+
+def descgame_tictactoe():
+    return "<b>Tic Tac Toe</b>\n\n"
+
+def descgame_rockpaperscissors():
+    return "<b>Камень ножницы бумага</b>\n\n"
+
+def descgame_rememberthesecards():
+    return "<b>Запомни эти карты</b>\n\n"
+
+def descgame_buttonpusher():
+    return "<b>Button pusher</b>\n\n"
+
+def descgame_sweetness():
+    return "<b>Sweetness</b>\n\n"
