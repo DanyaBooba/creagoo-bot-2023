@@ -77,7 +77,7 @@ def text_else():
 
 ## GAMES
 def descgame_babkaonthehunt2dclassic():
-    return "<b>Babka On The Hunt: 2D Классика</b>\n\nИграйте за русскую боевую женщину Дусю! Пройдите в БОЛЬНИЦУ. Отберите свою клубнику. Полетите в КОСМОС. Посетите местное болото. И отправьтесь домой отдыхать."
+    return "<b>Babka On The Hunt: 2D Классика</b>\n\nИграйте за русскую бабушку Дусю! Гуляйте по Павловскому Посаду. БЕЙТЕ гопников. Полетите в КОСМОС. Копите БАБЛО. И покупайте красивые вещи."
 
 def descgame_babkaonthehuntlight():
     return "<b>Babka On The Hunt Light</b>\n\n"

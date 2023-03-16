@@ -110,9 +110,26 @@ def get_text(m):
 
     elif usertext in lists.list_games:
         if usertext in lists.game_babkaonthehunt2dclassic:
+            link = "files/media/babkaonthehuntclassic/screen"
+            photos = [
+                telebot.types.InputMediaPhoto(open(link + "1.jpg", 'rb')),
+                telebot.types.InputMediaPhoto(open(link + "2.jpg", 'rb')),
+                telebot.types.InputMediaPhoto(open(link + "3.jpg", 'rb')),
+                telebot.types.InputMediaPhoto(open(link + "4.jpg", 'rb')),
+                telebot.types.InputMediaPhoto(open(link + "5.jpg", 'rb'))
+            ]
+
+            markup = types.InlineKeyboardMarkup()
+            markup.add(types.InlineKeyboardButton("Андроид скачать", url="https://s.creagoo.ru/?w=4tan36"))
+            markup.add(types.InlineKeyboardButton("Windows скачать", url="https://s.creagoo.ru/?w=YWdM3Y"))
+            markup.add(types.InlineKeyboardButton("macOS скачать", url="https://s.creagoo.ru/?w=b7RYYk"))
+            markup.add(types.InlineKeyboardButton("Linux скачать", url="https://s.creagoo.ru/?w=UYG87tf7f"))
+            markup.add(types.InlineKeyboardButton("Читать на сайте", url="https://creagoo.ru/games/babkaonthehuntclassic"))
+            markup.add(types.InlineKeyboardButton("Стикеры телеграм", url="https://t.me/addstickers/babkaonthehunt"))
+
             bot.send_message(m.chat.id, returns.descgame_babkaonthehunt2dclassic(), parse_mode='html')
-            ## прикрепить фотографии
-            ## прикрепить ссылки на скачивание
+            bot.send_media_group(m.chat.id, photos)
+            bot.send_message(m.chat.id, "Скачать сейчас", reply_markup=markup)
 
         elif usertext in lists.game_tictactoe:
             bot.send_message(m.chat.id, returns.descgame_tictactoe(), parse_mode='html')
