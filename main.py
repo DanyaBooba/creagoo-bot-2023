@@ -108,52 +108,146 @@ def get_text(m):
         markup.add(games, help, contact, links)
         bot.send_message(m.chat.id, 'Вы вернулись на главную', reply_markup=markup)
 
-    elif usertext in lists.list_games:
-        if usertext in lists.game_babkaonthehunt2dclassic:
-            link = "files/media/babkaonthehuntclassic/screen"
-            photos = [
-                telebot.types.InputMediaPhoto(open(link + "1.jpg", 'rb')),
-                telebot.types.InputMediaPhoto(open(link + "2.jpg", 'rb')),
-                telebot.types.InputMediaPhoto(open(link + "3.jpg", 'rb')),
-                telebot.types.InputMediaPhoto(open(link + "4.jpg", 'rb')),
-                telebot.types.InputMediaPhoto(open(link + "5.jpg", 'rb'))
-            ]
 
-            markup = types.InlineKeyboardMarkup()
-            markup.add(types.InlineKeyboardButton("Андроид скачать", url="https://s.creagoo.ru/?w=4tan36"))
-            markup.add(types.InlineKeyboardButton("Windows скачать", url="https://s.creagoo.ru/?w=YWdM3Y"))
-            markup.add(types.InlineKeyboardButton("macOS скачать", url="https://s.creagoo.ru/?w=b7RYYk"))
-            markup.add(types.InlineKeyboardButton("Linux скачать", url="https://s.creagoo.ru/?w=UYG87tf7f"))
-            markup.add(types.InlineKeyboardButton("Читать на сайте", url="https://creagoo.ru/games/babkaonthehuntclassic"))
-            markup.add(types.InlineKeyboardButton("Стикеры телеграм", url="https://t.me/addstickers/babkaonthehunt"))
+    elif usertext in lists.game_babkaonthehunt2dclassic:
 
-            bot.send_message(m.chat.id, returns.descgame_babkaonthehunt2dclassic(), parse_mode='html')
-            bot.send_media_group(m.chat.id, photos)
-            bot.send_message(m.chat.id, "Скачать сейчас", reply_markup=markup)
+        link = "files/media/babkaonthehuntclassic/screen"
+        photos = [
+            telebot.types.InputMediaPhoto(open(link + "1.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "2.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "3.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "4.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "5.jpg", 'rb'))
+        ]
 
-        elif usertext in lists.game_tictactoe:
-            bot.send_message(m.chat.id, returns.descgame_tictactoe(), parse_mode='html')
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("Андроид скачать", url="https://s.creagoo.ru/?w=4tan36"))
+        markup.add(types.InlineKeyboardButton("Windows скачать", url="https://s.creagoo.ru/?w=YWdM3Y"))
+        markup.add(types.InlineKeyboardButton("macOS скачать", url="https://s.creagoo.ru/?w=b7RYYk"))
+        markup.add(types.InlineKeyboardButton("Linux скачать", url="https://s.creagoo.ru/?w=UYG87tf7f"))
+        markup.add(types.InlineKeyboardButton("Читать на сайте", url="https://creagoo.ru/games/babkaonthehuntclassic"))
+        markup.add(types.InlineKeyboardButton("Стикеры телеграм", url="https://t.me/addstickers/babkaonthehunt"))
 
-        elif usertext in lists.game_babkaonthehuntlight:
-            bot.send_message(m.chat.id, returns.descgame_babkaonthehuntlight(), parse_mode='html')
+        bot.send_message(m.chat.id, returns.descgame_babkaonthehunt2dclassic(), parse_mode='html')
+        bot.send_media_group(m.chat.id, photos)
+        bot.send_message(m.chat.id, "Скачать сейчас:", reply_markup=markup)
 
-        elif usertext in lists.game_babkaonthehunt:
-            bot.send_message(m.chat.id, returns.descgame_babkaonthehunt(), parse_mode='html')
 
-        elif usertext in lists.game_guess:
-            bot.send_message(m.chat.id, returns.descgame_guess(), parse_mode='html')
+    elif usertext in lists.game_tictactoe:
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("Андроид скачать", url="https://s.creagoo.ru/?w=mjbvVR"))
+        markup.add(types.InlineKeyboardButton("Windows скачать", url="https://s.creagoo.ru/?w=wuOn3j"))
+        markup.add(types.InlineKeyboardButton("macOS скачать", url="https://s.creagoo.ru/?w=W2CC67"))
+        markup.add(types.InlineKeyboardButton("Читать на сайте", url="https://creagoo.ru/games/tictactoe"))
 
-        elif usertext in lists.game_rememberthesecards:
-            bot.send_message(m.chat.id, returns.descgame_rememberthesecards(), parse_mode='html')
+        bot.send_message(m.chat.id, returns.descgame_tictactoe(), parse_mode='html')
+        bot.send_message(m.chat.id, "Скачать сейчас:", reply_markup=markup)
 
-        elif usertext in lists.game_sweetness:
-            bot.send_message(m.chat.id, returns.descgame_sweetness(), parse_mode='html')
+    elif usertext in lists.game_babkaonthehuntlight:
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("Андроид скачать", url="https://s.creagoo.ru/?w=xWBGHn"))
+        markup.add(types.InlineKeyboardButton("Windows скачать", url="https://s.creagoo.ru/?w=GUPbCg"))
+        markup.add(types.InlineKeyboardButton("macOS скачать", url="https://s.creagoo.ru/?w=gWs0nk"))
+        markup.add(types.InlineKeyboardButton("Читать на сайте", url="https://creagoo.ru/games/babkaonthehuntlight"))
 
-        elif usertext in lists.game_buttonpusher:
-            bot.send_message(m.chat.id, returns.descgame_buttonpusher(), parse_mode='html')
+        bot.send_message(m.chat.id, returns.descgame_babkaonthehuntlight(), parse_mode='html')
+        bot.send_message(m.chat.id, "Скачать сейчас:", reply_markup=markup)
 
-        elif usertext in lists.game_rockpaperscissors:
-            bot.send_message(m.chat.id, returns.descgame_rockpaperscissors(), parse_mode='html')
+    elif usertext in lists.game_babkaonthehunt:
+        link = "files/media/babkaonthehunt/screen"
+        photos = [
+            telebot.types.InputMediaPhoto(open(link + "1.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "2.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "3.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "4.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "5.jpg", 'rb'))
+        ]
+
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("Андроид скачать", url="https://s.creagoo.ru/?w=zPcPOu"))
+        markup.add(types.InlineKeyboardButton("Windows скачать", url="https://s.creagoo.ru/?w=82hQer"))
+        markup.add(types.InlineKeyboardButton("macOS скачать", url="https://s.creagoo.ru/?w=rIznVk"))
+        markup.add(types.InlineKeyboardButton("Читать на сайте", url="https://creagoo.ru/games/babkaonthehunt"))
+        bot.send_message(m.chat.id, returns.descgame_babkaonthehunt(), parse_mode='html')
+        bot.send_media_group(m.chat.id, photos)
+        bot.send_message(m.chat.id, "Скачать сейчас:", reply_markup=markup)
+
+    elif usertext in lists.game_guess:
+        link = "files/media/guess/screen"
+        photos = [
+            telebot.types.InputMediaPhoto(open(link + "1.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "2.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "3.jpg", 'rb'))
+        ]
+
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("Андроид скачать", url="https://s.creagoo.ru/?w=84XLGz"))
+        markup.add(types.InlineKeyboardButton("Windows скачать", url="https://s.creagoo.ru/?w=WBoeAo"))
+        markup.add(types.InlineKeyboardButton("macOS скачать", url="https://s.creagoo.ru/?w=LYlIxt"))
+        markup.add(types.InlineKeyboardButton("Читать на сайте", url="https://creagoo.ru/games/guess"))
+        bot.send_message(m.chat.id, returns.descgame_guess(), parse_mode='html')
+        bot.send_media_group(m.chat.id, photos)
+        bot.send_message(m.chat.id, "Скачать сейчас:", reply_markup=markup)
+
+    elif usertext in lists.game_rememberthesecards:
+        link = "files/media/rememberthesecards/screen"
+        photos = [
+            telebot.types.InputMediaPhoto(open(link + "1.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "2.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "3.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "4.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "5.jpg", 'rb'))
+        ]
+
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("Андроид скачать", url="https://play.google.com/store/apps/details?id=com.Creagoo.RememberTheseCards"))
+        markup.add(types.InlineKeyboardButton("Читать на сайте", url="https://creagoo.ru/games/rememberthesecards"))
+        bot.send_message(m.chat.id, returns.descgame_rememberthesecards(), parse_mode='html')
+        bot.send_media_group(m.chat.id, photos)
+        bot.send_message(m.chat.id, "Скачать сейчас:", reply_markup=markup)
+
+    elif usertext in lists.game_sweetness:
+        link = "files/media/sweetness/screen"
+        photos = [
+            telebot.types.InputMediaPhoto(open(link + "1.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "2.jpg", 'rb')),
+            telebot.types.InputMediaPhoto(open(link + "3.jpg", 'rb'))
+        ]
+
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("Андроид скачать", url="https://s.creagoo.ru/?w=VqEGKs"))
+        markup.add(types.InlineKeyboardButton("Windows скачать", url="https://s.creagoo.ru/?w=vukI06"))
+        markup.add(types.InlineKeyboardButton("macOS скачать", url="https://s.creagoo.ru/?w=BK2gci"))
+        markup.add(types.InlineKeyboardButton("Читать на сайте", url="https://creagoo.ru/games/sweetness"))
+        bot.send_message(m.chat.id, returns.descgame_sweetness(), parse_mode='html')
+        bot.send_media_group(m.chat.id, photos)
+        bot.send_message(m.chat.id, "Скачать сейчас:", reply_markup=markup)
+
+    elif usertext in lists.game_buttonpusher:
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("Андроид скачать", url="https://s.creagoo.ru/?w=99ZMJN"))
+        markup.add(types.InlineKeyboardButton("Windows скачать", url="https://s.creagoo.ru/?w=aJpAG4"))
+        markup.add(types.InlineKeyboardButton("macOS скачать", url="https://s.creagoo.ru/?w=Rmp432"))
+        markup.add(types.InlineKeyboardButton("Читать на сайте", url="https://creagoo.ru/games/buttonpusher"))
+
+        bot.send_message(m.chat.id, returns.descgame_buttonpusher(), parse_mode='html')
+        bot.send_message(m.chat.id, "Скачать сейчас:", reply_markup=markup)
+
+    elif usertext in lists.game_rockpaperscissors:
+        link = "files/media/rockpaperscissors/screen"
+        photos = [
+            telebot.types.InputMediaPhoto(open(link + ".jpg", 'rb'))
+        ]
+
+        markup = types.InlineKeyboardMarkup()
+        markup.add(types.InlineKeyboardButton("Андроид скачать", url="https://s.creagoo.ru/?w=apsw0v"))
+        markup.add(types.InlineKeyboardButton("Windows скачать", url="https://s.creagoo.ru/?w=SaZ4Jk"))
+        markup.add(types.InlineKeyboardButton("macOS скачать", url="https://s.creagoo.ru/?w=soVx0V"))
+        markup.add(types.InlineKeyboardButton("Читать на сайте", url="https://creagoo.ru/games/rockpaperscissors"))
+
+        bot.send_message(m.chat.id, returns.descgame_rockpaperscissors(), parse_mode='html')
+        bot.send_media_group(m.chat.id, photos)
+        bot.send_message(m.chat.id, "Скачать сейчас:", reply_markup=markup)
 
     else:
         bot.send_message(m.chat.id, returns.text_else())

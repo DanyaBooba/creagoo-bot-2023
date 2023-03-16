@@ -54,38 +54,76 @@ text_getmainscreen = [
 
 ## GAMES
 game_babkaonthehunt2dclassic = [
-    'babka on the hunt: 2d классика'
+    'babka on the hunt: 2d классика',
+    'babkaonthehuntclassic',
+    'babka on the hunt classic',
+    'babkaonthehunt2dclassic',
+    'игра бабушка',
+    'бабка',
+    'бабка он зе хант',
+    'бабкаонзехант',
+    'babka on the hunt new',
+    'babkaonthehuntnew',
+    'babkaonthehunt 2d classic',
+    'babka on the hunt 2d classic',
+    'babka on the hunt 2d классика',
+    'babka'
 ]
 
 game_babkaonthehuntlight = [
-    'babka on the hunt light'
+    'babka on the hunt light',
+    'babkaonthehuntlight'
 ]
 
 game_babkaonthehunt = [
-    'babka on the hunt'
+    'babka on the hunt',
+    'both',
+    'babkaonthehunt',
 ]
 
 game_sweetness = [
-    'sweetness'
+    'sweetness',
+    'свитнес'
 ]
 
 game_guess = [
-    'guess'
+    'guess',
+    'угадай'
 ]
 
 game_rockpaperscissors = [
-    'камень ножницы бумага'
+    'камень ножницы бумага',
+    'rock paper scissors',
+    'каменьножницыбумага',
+    'rockpaperscissors'
 ]
 
 game_rememberthesecards = [
-    'запомни эти карты'
+    'запомни эти карты',
+    'запомниэтикарты',
+    'игры карты',
+    'карты',
+    'карты скачать',
+    'game cards',
+    'cards download',
+    'card',
+    'card download',
+    'rememberthesecards',
+    'rtc',
+    'cards'
 ]
 
 game_tictactoe = [
-    'крестики нолики'
+    'крестики нолики',
+    'крестикинолики',
+    'ttt',
+    'tictactoe',
+    'tic tac toe'
 ]
 
 game_buttonpusher = [
-    'button clicker'
+    'button pusher',
+    'button clicker',
+    'нажми кнопку'
 ]
 
