@@ -1,16 +1,19 @@
 from telebot import types
 import telebot
+
+import logs
 import lists
 import returns
 import tokenbot
 
 bot = telebot.TeleBot(tokenbot.token)
+logs.save(formattext=-1)
 
 ## COMMANDS
 @bot.message_handler(commands=['start'])
 def start(m):
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    games = types.KeyboardButton('Смотреть игры')
+    games = types.KeyboardButton('Игры')
     help = types.KeyboardButton('Помощь')
     contact = types.KeyboardButton('Связаться')
     links = types.KeyboardButton('Ссылки')
@@ -19,6 +22,8 @@ def start(m):
 
     bot.send_message(m.chat.id, returns.start(0), reply_markup=markup)
     bot.send_message(m.chat.id, returns.start(1), reply_markup=markup)
+
+    logs.save(chatid=m.chat.id, text="/start", formattext=1)
 
 @bot.message_handler(commands=['help'])
 def help(m):
@@ -32,11 +37,27 @@ def help(m):
     markup1.add(types.InlineKeyboardButton("@ddybka", url="https://ddybka.t.me"))
     bot.send_message(m.chat.id, 'Связаться с автором', reply_markup=markup1)
 
+    logs.save(chatid=m.chat.id, text="/help", formattext=1)
+
 
 ## DOC
 @bot.message_handler(content_types=['photo'])
 def photo(m):
-    bot.send_message(m.chat.id, returns.sended_photo(), parse_mode='html')
+    bot.send_message(m.chat.id, returns.sended_document(), parse_mode='html')
+
+    logs.save(chatid=m.chat.id, text="sended photo", formattext=2)
+
+@bot.message_handler(content_types=['document'])
+def document(m):
+    bot.send_message(m.chat.id, returns.sended_document(), parse_mode='html')
+
+    logs.save(chatid=m.chat.id, text="sended document", formattext=2)
+
+@bot.message_handler(content_types=['video'])
+def document(m):
+    bot.send_message(m.chat.id, returns.sended_document(), parse_mode='html')
+
+    logs.save(chatid=m.chat.id, text="sended video", formattext=2)
 
 
 ## PINNED
@@ -44,11 +65,14 @@ def photo(m):
 def get_pin_message(m):
     bot.send_message(m.chat.id, returns.pinned_message())
 
+    logs.save(chatid=m.chat.id, text="pinned message", formattext=3)
+
 
 ## TEXT
 @bot.message_handler(content_types=['text'])
 def get_text(m):
     usertext = m.text.lower()
+    logs.save(chatid=m.chat.id, text=usertext, formattext=0)
 
     if usertext in lists.list_hello:
         bot.send_message(m.chat.id, returns.text_hello(m.from_user.first_name))
@@ -100,7 +124,7 @@ def get_text(m):
 
     elif usertext in lists.text_getmainscreen:
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-        games = types.KeyboardButton('Смотреть игры')
+        games = types.KeyboardButton('Игры')
         help = types.KeyboardButton('Помощь')
         contact = types.KeyboardButton('Связаться')
         links = types.KeyboardButton('Ссылки')
@@ -249,8 +273,14 @@ def get_text(m):
         bot.send_media_group(m.chat.id, photos)
         bot.send_message(m.chat.id, "Скачать сейчас:", reply_markup=markup)
 
+    elif returns.text_another(usertext) != False:
+        bot.send_message(m.chat.id, returns.text_another(usertext))
+
     else:
         bot.send_message(m.chat.id, returns.text_else())
 
 
-bot.polling(none_stop=True)
+if __name__ == "__main__":
+    bot.polling(none_stop=True)
+
+logs.save(formattext=-2)
